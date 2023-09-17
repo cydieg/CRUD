@@ -8,6 +8,8 @@
 <body>
     <h1>Home</h1>
     <a href ="/insert">Add new product</a>
+    <br>
+    <br>
     <?php if($products):?>
         <table border = "3">
             <tr>
@@ -30,7 +32,7 @@
                     <td><?= $product['Expiry_date']?></td>
                     <td><?= $product['Created_at']?></td>
                     <td>
-                        <a href="/update">Update</a>
+                        <a href="/update/<?=$product['ID']?>">Update</a>
                         <a href="/delete/<?=$product['ID']?>">Delete</a>
                     </td>
                 </tr>

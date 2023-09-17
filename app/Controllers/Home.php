@@ -23,12 +23,17 @@ class Home extends BaseController
         $products-> delete(['ID' => $ID]);
         return redirect ()->to ('/home');
     }
+
+    public function update($ID = null){
+        $products = new ProductModel();
+        $data['products'] = $products->where('ID', $ID)->first();
+        return view('insert', $data);
+    }
     
     public function insert(){
         return view('insert');
     }
     public function actionInsert(){
-
        $ID = $this->request->getVar("ID");
        $UPC = $this->request->getVar("UPC");
        $Name = $this->request->getVar("Fullname");
@@ -46,7 +51,11 @@ class Home extends BaseController
         'Expiry_date' => $Expiry_date,
         'Created_at' => $Created_at
        ];
-       $products ->save($data);
+       if(isset($_POST['update'])){
+        $products->set($data)->where('ID', $ID)->update();
+       }else{
+        $products ->save($data);
+       }
        return redirect ()->to ('/home');
     }
     

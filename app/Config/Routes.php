@@ -10,3 +10,4 @@ $routes->get('/home', 'Home::home');
 $routes->get('/insert', 'Home::insert');
 $routes->post('/actionInsert', 'Home::actionInsert');
 $routes->get('/delete/(:any)', 'Home::delete/$1');
+$routes->get('/update/(:any)', 'Home::update/$1');
