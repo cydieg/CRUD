@@ -31,7 +31,16 @@ class Home extends BaseController
     }
     
     public function insert(){
-        return view('update', $data);
+        $products = [
+            'ID' => 123,
+            'UPC' => 'ABC123',
+            'Name' => 'Product Name',
+            'Quantity' => 10,
+            'Price' => 9.99,
+            'Expiry_date' => '2023-09-12T12:00',
+            'Created_at' => '2023-09-12T10:00'
+        ];
+        return view('insert', compact('products'));
     }
 
     public function actionInsert(){

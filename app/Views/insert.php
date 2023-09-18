@@ -12,10 +12,6 @@
         text-align: center;
         font color: white
         }
-    h5{
-        text-align: center;
-        width: 100%;
-    }
 
     input[type=text], select {
         width: 100%;
@@ -46,7 +42,7 @@
         }   
 
     input[type=submit] {
-        width: 50%;
+        width: 100%;
         background-color: #4CAF50;
         color: white;
         padding: 14px 20px;
@@ -94,13 +90,12 @@
     <br>
     <label><b>Created_at</b></label>
     <input type="datetime-local" name = "Created_at" placeholder = "" value = "<?=$products['Created_at']?>">
-    <h5>
+    <br>
     <?php if($products):?>
     <input type="submit" name="update" value = "Update Product">
     <?php else:?>
     <input type="submit" name="submit" value = "Save Product">
     <?php endif;?>
-    </h5>
     </form>
     </div>
 </body>
