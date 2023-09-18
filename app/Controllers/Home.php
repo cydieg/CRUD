@@ -31,9 +31,11 @@ class Home extends BaseController
     }
     
     public function insert(){
-        return view('insert');
+        return view('update', $data);
     }
+
     public function actionInsert(){
+        
        $ID = $this->request->getVar("ID");
        $UPC = $this->request->getVar("UPC");
        $Name = $this->request->getVar("Fullname");

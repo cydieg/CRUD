@@ -4,12 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
+<style>
+    table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+    td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    }
+
+    tr:nth-child(even) {
+    background-color: #dddddd;
+    }
+    h1{
+        text-align: center;
+        background-color: #0a9396;
+        padding: 20px;
+        text-align: center;
+        font color: white
+    }
+    .footer {
+        background-color: #0a9396;
+        text-align: center;
+        padding: 4px;
+    }
+</style>
 </head>
+
 <body>
-    <h1>Home</h1>
+    <h1 style ="color:white">Grocery Store Management</h1>
     <a href ="/insert">Add new product</a>
     <br>
     <br>
+    <nav>
+    <ul>
+      <li><a href="#">cracklings</a></li>
+      <li><a href="#">oishi</a></li>
+      <li><a href="#">coffee</a></li>
+    </ul>
+  </nav>
+  
     <?php if($products):?>
         <table border = "3">
             <tr>
@@ -24,7 +62,7 @@
             </tr>
             <?php foreach ($products as $product):?>
                 <tr>
-                    <td> <?= $product['ID']?></td>
+                    <td> <?=$product['ID']?></td>
                     <td><?= $product['UPC']?></td>
                     <td><?= $product['Name']?></td>
                     <td><?= $product['Quantity']?></td>
@@ -39,5 +77,9 @@
                 <?php endforeach; ?>
         </table>
         <?php endif; ?>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="footer">
+        <p style ="color:white"><b>©2023 Grocery Store Management</b></p>
+        </div>
 </body>
 </html>
