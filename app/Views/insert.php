@@ -61,9 +61,12 @@
         border-radius: 20px;
         background-color: #f2f2f2;
         padding: 10px;
-        width: 35%;
-        text-align: left;
-        }   
+        width: 50%;
+        align-items: center;
+    }
+    body{
+        align-items: center;
+    }
     </style>
 </head>
 <body>

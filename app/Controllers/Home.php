@@ -23,24 +23,15 @@ class Home extends BaseController
         $products-> delete(['ID' => $ID]);
         return redirect ()->to ('/home');
     }
+    
+    public function insert(){
+        return view('insert');
+    }
 
     public function update($ID = null){
         $products = new ProductModel();
         $data['products'] = $products->where('ID', $ID)->first();
         return view('insert', $data);
-    }
-    
-    public function insert(){
-        $products = [
-            'ID' => 123,
-            'UPC' => 'ABC123',
-            'Name' => 'Product Name',
-            'Quantity' => 10,
-            'Price' => 9.99,
-            'Expiry_date' => '2023-09-12T12:00',
-            'Created_at' => '2023-09-12T10:00'
-        ];
-        return view('insert', compact('products'));
     }
 
     public function actionInsert(){

@@ -13,7 +13,7 @@
 
     td, th {
     border: 1px solid #dddddd;
-    text-align: left;
+    text-align: center;
     padding: 8px;
     }
 
@@ -32,6 +32,12 @@
         text-align: center;
         padding: 4px;
     }
+    a{
+        border: none:
+        padding: 15px;
+        font-size: 16px;
+        font color: white;
+    }
 </style>
 </head>
 
@@ -40,14 +46,7 @@
     <a href ="/insert">Add new product</a>
     <br>
     <br>
-    <nav>
-    <ul>
-      <li><a href="#">cracklings</a></li>
-      <li><a href="#">oishi</a></li>
-      <li><a href="#">coffee</a></li>
-    </ul>
-  </nav>
-  
+    <br>
     <?php if($products):?>
         <table border = "3">
             <tr>
@@ -62,7 +61,7 @@
             </tr>
             <?php foreach ($products as $product):?>
                 <tr>
-                    <td> <?=$product['ID']?></td>
+                    <td><?=$product['ID']?></td>
                     <td><?= $product['UPC']?></td>
                     <td><?= $product['Name']?></td>
                     <td><?= $product['Quantity']?></td>
@@ -74,9 +73,9 @@
                         <a href="/delete/<?=$product['ID']?>">Delete</a>
                     </td>
                 </tr>
-                <?php endforeach; ?>
+            <?php endforeach; ?>
         </table>
-        <?php endif; ?>
+            <?php endif; ?>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <div class="footer">
         <p style ="color:white"><b>©2023 Grocery Store Management</b></p>
